@@ -1075,7 +1075,6 @@ module UVC
 
 		def set_cur(control_selector, entityID, data)
 			control = KNOWN_CONTROLS.find {|c| c[:selector] == control_selector }
-			p [:set_cur, control]
 			data = control[:encode].call(data) if control
 			set_request(SET_CUR, UVC.const_get(control_selector), entityID, data)
 		end
