@@ -976,8 +976,8 @@ module UVC
 			{
 				selector: Controls::PU_HUE_CONTROL,
 				length: 2,
-				encode: lambda {|wHue| [wHue].pack("v")},
-				decode: lambda {|x| x.unpack("v")[0]},
+				encode: lambda {|wHue| [wHue].pack("s<")},
+				decode: lambda {|x| x.unpack("s<")[0]},
 			},
 			{
 				selector: Controls::PU_HUE_AUTO_CONTROL,
